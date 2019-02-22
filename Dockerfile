@@ -1,4 +1,6 @@
 FROM golang:latest as builder
+ENV	 REDIS_HOST=redis \
+        REDIS_PORT=6379
 RUN mkdir /app
 COPY . /go/src/mapserver/
 WORKDIR /go/src/mapserver/
