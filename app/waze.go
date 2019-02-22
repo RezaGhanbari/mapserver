@@ -20,7 +20,6 @@ func googleRoute(c *gin.Context) {
 
 	splitDestination := strings.Split(destination, cnst.LatinComma)
 	latDest, lngDest := splitDestination[0], splitDestination[1]
-	log.Println(latOrigin, lngOrigin, latDest, lngDest)
 
 	url := cnst.WazeMapURL + fmt.Sprintf(cnst.WazeMapRouteURL, lngOrigin, latOrigin, lngDest, latDest)
 	//url := GoogleMapURL + fmt.Sprintf(GoogleMapRouteURL,

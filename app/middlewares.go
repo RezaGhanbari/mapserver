@@ -102,11 +102,7 @@ func TokenAuthMiddleware(config *Config) gin.HandlerFunc {
 // RequestIDMiddleware function
 func RequestIDMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		u, err := uuid.NewV4()
-		if err != nil {
-			c.Abort()
-			return
-		}
+		u := uuid.NewV4()
 		c.Writer.Header().Set(cnst.XRequestID, u.String())
 		c.Next()
 	}
